@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -p /home/ubuntu/test/vol/cortex
-mkdir -p /home/ubuntu/test/vol/thehive
-sudo mv /home/ubuntu/application.conf /home/ubuntu/test/vol/thehive
+#mkdir -p /home/ubuntu/test/vol/thehive
+#sudo mv /home/ubuntu/application.conf /home/ubuntu/test/vol/thehive
 git clone https://github.com/TheHive-Project/Cortex-Analyzers.git /home/ubuntu/test/vol/cortex
 alias cortexDir="cd /home/ubuntu/test/vol/cortex"
 cortexDir
