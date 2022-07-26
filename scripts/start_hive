@@ -2,4 +2,4 @@
 alias hiveDir="cd /home/ubuntu/test/"
 hiveDir
 pwd
-sudo docker-compose up > /dev/null 2> /dev/null < /dev/null &
+docker-compose up > /dev/null 2> /dev/null < /dev/null &
