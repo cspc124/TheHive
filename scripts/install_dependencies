@@ -1,5 +1,4 @@
 #!/bin/bash
-mv application.conf test/vol/thehive
 mkdir -p /home/ubuntu/test/vol/cortex
 git clone https://github.com/TheHive-Project/Cortex-Analyzers.git /home/ubuntu/test/vol/cortex
 alias cortexDir="cd /home/ubuntu/test/vol/cortex"
