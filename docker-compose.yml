@@ -35,7 +35,7 @@ services:
       #- "--cortex-keys"
       #- "k3DZO07qOoIMfNNS5qLloPmMS2PnhMMR"
     volumes:
-      - thehivedata:/etc/thehive/application.conf
+      - ./vol/thehive/application.conf:/etc/thehive/application.conf
     networks:
       - SOC_NET
 
@@ -104,7 +104,6 @@ volumes:
   cassandradata:
   elasticsearchdata:
   cortexdata:
-  thehivedata:
 
 networks:
     SOC_NET:
