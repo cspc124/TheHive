@@ -1,3 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/test
+alias hiveDir="cd /home/ubuntu/test/"
+hiveDir
+pwd
 sudo docker-compose up > /dev/null 2> /dev/null < /dev/null &
