@@ -2,5 +2,4 @@
 sudo mv /home/ubuntu/application.conf /home/ubuntu/test/vol/thehive
 cd /home/ubuntu
 pwd
-docker-compose up 
-#> /dev/null 2> /dev/null < /dev/null &
+docker-compose up > /dev/null 2> /dev/null < /dev/null &
