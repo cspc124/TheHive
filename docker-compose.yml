@@ -2,7 +2,7 @@ version: "3"
 services:
   thehive:
     image: strangebee/thehive:latest
-    restart: yes
+    restart: unless-stopped
     depends_on:
       - cassandra
       - elasticsearch
@@ -41,7 +41,7 @@ services:
 
   cassandra:
     image: 'cassandra:4'
-    restart: yes
+    restart: unless-stopped
     mem_limit: 1000m
     ports:
       - "0.0.0.0:9042:9042"
@@ -54,7 +54,7 @@ services:
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.4
-    restart: yes
+    restart: unless-stopped
     mem_limit: 512m
     ports:
       - "0.0.0.0:9200:9200"
@@ -71,7 +71,7 @@ services:
 
   minio:
     image: quay.io/minio/minio
-    restart: yes
+    restart: unless-stopped
     command: ["minio", "server", "/data", "--console-address", ":9002"]
     environment:
       - MINIO_ROOT_USER=minioadmin
@@ -85,7 +85,7 @@ services:
 
   cortex:
     image: thehiveproject/cortex:latest
-    restart: yes
+    restart: unless-stopped
     environment:
       - job_directory=/opt/cortex/jobs
     volumes:
