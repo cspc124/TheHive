@@ -106,7 +106,7 @@ volumes:
   cassandradata:
   elasticsearchdata:
   cortexdata:
-  thehivedata:
+  home/ubuntu:
 
 networks:
     SOC_NET:
