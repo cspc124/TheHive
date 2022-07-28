@@ -29,8 +29,8 @@ services:
       - elasticsearch 
     ports: 
       - "0.0.0.0:9001:9001" 
-     networks:
-       - backend
+    networks:
+      - backend
   thehive: 
     image: thehiveproject/thehive:3.4.0 
     depends_on: 
@@ -39,8 +39,8 @@ services:
     ports: 
       - "0.0.0.0:9000:9000" 
     command: --cortex-port 9001
-     networks:
-       - backend
+    networks:
+      - backend
        
 networks:
   backend:
