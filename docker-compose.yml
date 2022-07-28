@@ -22,7 +22,7 @@ services:
       - "0.0.0.0:9001:9001" 
   thehive: 
     image: thehiveproject/thehive:3.4.0 
-        depends_on: 
+    depends_on: 
       - elasticsearch 
       - cortex 
     ports: 
