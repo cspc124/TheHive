@@ -12,7 +12,6 @@ services:
       - "0.0.0.0:9000:9000"
     environment:
       - JVM_OPTS="-Xms1024M -Xmx1024M"
-    command:
     volumes:
       - ./etc/thehive/application.conf:/etc/thehive/application.conf
     networks:
