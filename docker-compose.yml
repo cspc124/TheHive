@@ -8,4 +8,4 @@ services:
 #      --cortex-port 9001
 #      --cortex-keys A3wppZabepHR0eweSf59WPggEf11OIx7
     volumes:
-      - .vol/thehive/application.conf:/etc/thehive/application.conf
+      - .test/vol/thehive/application.conf:/etc/thehive/application.conf
