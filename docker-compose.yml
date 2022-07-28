@@ -1,7 +1,7 @@
 version: "3"
 services:
   thehive:
-    image: thehiveproject/thehive:latest
+    image: thehiveproject/thehive4:latest
     restart: unless-stopped
     depends_on:
       - cassandra
@@ -13,26 +13,6 @@ services:
     environment:
       - JVM_OPTS="-Xms1024M -Xmx1024M"
     command:
-      - --secret
-      - "lab123456789"
-      - "--cql-hostnames"
-      - "cassandra"
-      - "--index-backend"
-      - "elasticsearch"
-      - "--es-hostnames"
-      - "elasticsearch"
-      - "--s3-endpoint"
-      - "http://minio:9002"
-      - "--s3-access-key"
-      - "minioadmin"
-      - "--s3-secret-key"
-      - "minioadmin"
-      - "--s3-use-path-access-style"
-      - "--no-config-cortex"
-      #- "--cortex-port"
-      #- "9001"
-      #- "--cortex-keys"
-      #- "k3DZO07qOoIMfNNS5qLloPmMS2PnhMMR"
     volumes:
       - ./etc/thehive/application.conf:/etc/thehive/application.conf
     networks:
