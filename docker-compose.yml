@@ -35,7 +35,7 @@ services:
       #- "--cortex-keys"
       #- "k3DZO07qOoIMfNNS5qLloPmMS2PnhMMR"
     volumes:
-      - thehivedata:/etc/thehive/application.conf
+      - home/ubuntu:/etc/thehive/application.conf
     networks:
       - SOC_NET
 
