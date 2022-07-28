@@ -1,7 +1,7 @@
 version: "3"
 services:
   thehive:
-    image: thehiveproject/thehive4:latest
+    image: thehiveproject/thehive:latest
     restart: unless-stopped
     depends_on:
       - cassandra
@@ -90,6 +90,7 @@ volumes:
   cassandradata:
   elasticsearchdata:
   cortexdata:
+  thehivedata:
 
 networks:
     SOC_NET:
