@@ -90,7 +90,6 @@ volumes:
   cassandradata:
   elasticsearchdata:
   cortexdata:
-  thehivedata:
 
 networks:
     SOC_NET:
