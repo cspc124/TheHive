@@ -12,6 +12,7 @@ services:
       - "0.0.0.0:9000:9000"
     environment:
       - JVM_OPTS="-Xms1024M -Xmx1024M"
+    command:
     volumes:
       - ./etc/thehive/application.conf:/etc/thehive/application.conf
     networks:
@@ -31,17 +32,19 @@ services:
       - SOC_NET
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.4
-    restart: unless-stopped
-    mem_limit: 512m
-    ports:
-      - "0.0.0.0:9200:9200"
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    container_name: es01
     environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
+      - node.name=es01
       - cluster.name=hive
-      - http.host=0.0.0.0
-      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     volumes:
       - elasticsearchdata:/usr/share/elasticsearch/data
     networks:
