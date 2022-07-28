@@ -12,7 +12,6 @@ services:
       - "0.0.0.0:9000:9000"
     environment:
       - JVM_OPTS="-Xms1024M -Xmx1024M"
-    command:
     volumes:
       - ./etc/thehive/application.conf:/etc/thehive/application.conf
     networks:
@@ -37,8 +36,6 @@ services:
     environment:
       - node.name=es01
       - cluster.name=hive
-      - discovery.seed_hosts=es02,es03
-      - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits:
