@@ -5,7 +5,7 @@ services:
     ports:
       - "0.0.0.0:9000:9000"
 #    command:
-#      --cortex-port 9001
-#      --cortex-keys A3wppZabepHR0eweSf59WPggEf11OIx7
+      --cortex-port 9001
+      --cortex-keys A3wppZabepHR0eweSf59WPggEf11OIx7
     volumes:
       - ./test/vol/thehive/application.conf:/etc/thehive/application.conf
