@@ -15,7 +15,7 @@ services:
   
   cassandra:
     image: 'cassandra:4'
-    restart: unless-stopped
+    restart: always
     mem_limit: 1000m
     ports:
       - "0.0.0.0:9042:9042"
