@@ -13,22 +13,4 @@ services:
     volumes:
       - ./test/vol/thehive/application.conf:/etc/thehive/application.conf
   
-  cassandra:
-    image: 'cassandra:4'
-    restart: always
-    mem_limit: 1000m
-    ports:
-      - "0.0.0.0:9042:9042"
-    environment:
-      - CASSANDRA_CLUSTER_NAME=TheHive
-    volumes:
-      - cassandradata:/var/lib/cassandra
-    networks:
-      - SOC_NET
-      
-volumes:
-  cassandradata:
 
-networks:
-    SOC_NET:
-          driver: bridge
