@@ -2,6 +2,9 @@ version: "2"
 services:
   thehive:
     image: thehiveproject/thehive4:latest
+    restart: always
+    depends_on:
+      - cassandra
     ports:
       - "0.0.0.0:9000:9000"
  #   command:
@@ -9,3 +12,23 @@ services:
  #     --cortex-keys VpgDIi/gbo9O6LQJMO5r9gyaG+2jQBNA
     volumes:
       - ./test/vol/thehive/application.conf:/etc/thehive/application.conf
+  
+  cassandra:
+    image: 'cassandra:4'
+    restart: unless-stopped
+    mem_limit: 1000m
+    ports:
+      - "0.0.0.0:9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=TheHive
+    volumes:
+      - cassandradata:/var/lib/cassandra
+    networks:
+      - SOC_NET
+      
+volumes:
+  cassandradata:
+
+networks:
+    SOC_NET:
+          driver: bridge
