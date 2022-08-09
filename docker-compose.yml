@@ -3,8 +3,6 @@ services:
   thehive:
     image: thehiveproject/thehive4:latest
     restart: always
-    depends_on:
-      - cassandra
     ports:
       - "0.0.0.0:9000:9000"
  #   command:
